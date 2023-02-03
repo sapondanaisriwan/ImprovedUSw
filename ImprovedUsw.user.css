@@ -1,0 +1,59 @@
+/* ==UserStyle==
+@name           ImprovedUSw
+@namespace      github.com/sapondanaisriwan
+@version        1.0.1
+@author         sapondanaisriwan
+@preprocessor   stylus
+
+@advanced checkbox fullTitle "Full Title" 0
+@advanced checkbox detailOverlay "Detail Overlay" 0
+@advanced checkbox hideDetail "Hide Detail" 0
+@advanced range NeverGonnaGiveYouUp "Styles Per Row" [4, 1, 7, 1]
+
+/*
+Support me: https://ko-fi.com/sapondanaisriwan
+Support me: https://ko-fi.com/sapondanaisriwan
+Support me: https://ko-fi.com/sapondanaisriwan
+
+*/
+
+==/UserStyle== */
+@-moz-document domain("userstyles.world") {
+
+    /* Variable */
+    i=!important;
+
+    :root {
+        --Never-Gonna-Give-You-Up: NeverGonnaGiveYouUp;
+    }
+
+    .grid .col {
+        position: relative;
+
+        min-width: calc(100% / var(--Never-Gonna-Give-You-Up) - 1rem);
+        max-width: calc(100% / var(--Never-Gonna-Give-You-Up) - 1rem);
+    }
+
+    .card-body > * {
+        white-space: normal i if fullTitle;
+    }
+
+    .card-footer {
+        display: none if hideDetail;
+
+        flex-wrap: wrap;
+
+        if (detailOverlay) {
+            flex-direction: column;
+            align-items: flex-end;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            padding: 8px i;
+            border-radius: 0 var(--br-3) 0 var(--br-3);
+            background: rgba(36, 36, 36, 0.9);
+        }
+    }
+}
