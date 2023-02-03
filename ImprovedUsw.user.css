@@ -6,7 +6,7 @@
 @preprocessor   stylus
 
 @advanced range NeverGonnaGiveYouUp "Styles Per Row" [4, 1, 7, 1]
-@advanced checkbox zoomCard "Zoom" 1
+@advanced checkbox zoomCard "Zoom-In" 1
 @advanced checkbox moreAnimation "More Animation" 1
 @advanced checkbox fullTitle "Full Title" 0
 @advanced checkbox detailOverlay "Detail Overlay" 1
@@ -65,9 +65,6 @@ Support me: https://ko-fi.com/sapondanaisriwan
             }
         }
     }
-
-    body > main > div > section > div > div > a > picture > img {}
-
 
     .card-body > * {
         white-space: normal i if fullTitle;
