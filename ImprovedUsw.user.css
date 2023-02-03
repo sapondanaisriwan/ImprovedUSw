@@ -1,15 +1,16 @@
 /* ==UserStyle==
 @name           `ImprovedUSw
 @namespace      github.com/sapondanaisriwan
-@version        1.0.2
+@version        1.0.3
 @author         sapondanaisriwan
 @preprocessor   stylus
 
+@advanced range NeverGonnaGiveYouUp "Styles Per Row" [4, 1, 7, 1]
+@advanced checkbox zoomCard "Zoom" 1
 @advanced checkbox moreAnimation "More Animation" 1
 @advanced checkbox fullTitle "Full Title" 0
-@advanced checkbox detailOverlay "Detail Overlay" 0
+@advanced checkbox detailOverlay "Detail Overlay" 1
 @advanced checkbox hideDetail "Hide Detail" 0
-@advanced range NeverGonnaGiveYouUp "Styles Per Row" [4, 1, 7, 1]
 
 ==/UserStyle== */
 /* 
@@ -21,6 +22,7 @@ Support me: https://ko-fi.com/sapondanaisriwan
 
     /* Variable */
     i=!important;
+    t=transparent;
 
     :root {
         --Never-Gonna-Give-You-Up: NeverGonnaGiveYouUp;
@@ -43,12 +45,30 @@ Support me: https://ko-fi.com/sapondanaisriwan
 
         min-width: calc(100% / var(--Never-Gonna-Give-You-Up) - 1rem);
         max-width: calc(100% / var(--Never-Gonna-Give-You-Up) - 1rem);
-        
+
         animation: slideInUp .7s i if moreAnimation;
+
+        if (zoomCard) {
+            transition: transform .2s i;
+
+            &:hover {
+                /* Delay Hover */
+                transition-delay: 1s i;
+
+                /* Always on top */
+                z-index: 1 i;
+
+                /* Zoom */
+                -ms-transform: scale(1.5);
+                -webkit-transform: scale(1.5);
+                transform: scale(1.5);
+            }
+        }
     }
 
-    
-    
+    body > main > div > section > div > div > a > picture > img {}
+
+
     .card-body > * {
         white-space: normal i if fullTitle;
     }
