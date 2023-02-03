@@ -1,23 +1,22 @@
 /* ==UserStyle==
-@name           ImprovedUSw
+@name           `ImprovedUSw
 @namespace      github.com/sapondanaisriwan
-@version        1.0.1
+@version        1.0.2
 @author         sapondanaisriwan
 @preprocessor   stylus
 
+@advanced checkbox moreAnimation "More Animation" 1
 @advanced checkbox fullTitle "Full Title" 0
 @advanced checkbox detailOverlay "Detail Overlay" 0
 @advanced checkbox hideDetail "Hide Detail" 0
 @advanced range NeverGonnaGiveYouUp "Styles Per Row" [4, 1, 7, 1]
 
-/*
-Support me: https://ko-fi.com/sapondanaisriwan
-Support me: https://ko-fi.com/sapondanaisriwan
-Support me: https://ko-fi.com/sapondanaisriwan
-
-*/
-
 ==/UserStyle== */
+/* 
+Support me: https://ko-fi.com/sapondanaisriwan
+Support me: https://ko-fi.com/sapondanaisriwan
+Support me: https://ko-fi.com/sapondanaisriwan
+*/
 @-moz-document domain("userstyles.world") {
 
     /* Variable */
@@ -27,13 +26,29 @@ Support me: https://ko-fi.com/sapondanaisriwan
         --Never-Gonna-Give-You-Up: NeverGonnaGiveYouUp;
     }
 
+    @keyframes slideInUp {
+        from {
+            transform: translateY(15px);
+            opacity: 0
+        }
+
+        to {
+            transform: translateY(0px);
+            opacity: 1
+        }
+    }
+
     .grid .col {
         position: relative;
 
         min-width: calc(100% / var(--Never-Gonna-Give-You-Up) - 1rem);
         max-width: calc(100% / var(--Never-Gonna-Give-You-Up) - 1rem);
+        
+        animation: slideInUp .7s i if moreAnimation;
     }
 
+    
+    
     .card-body > * {
         white-space: normal i if fullTitle;
     }
