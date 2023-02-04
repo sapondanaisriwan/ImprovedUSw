@@ -1,3 +1,6 @@
+## v1.0.4
+- Remove text detail.
+
 ## v1.0.3
 - Add Zoom-In.
 
